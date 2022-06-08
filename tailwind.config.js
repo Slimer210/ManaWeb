@@ -1,7 +1,7 @@
 module.exports = {
   content: [
-    "./index.html",
-    "./src/**/*.{vue,js,ts,jsx,tsx}",
+    './index.html',
+    './src/**/*.{vue,js,ts,jsx,tsx}',
   ],
   theme: {
     screens: {
@@ -12,25 +12,25 @@ module.exports = {
     },
 
     fontFamily: {
-      sans: ['Noto Sans TC', 'sans-serif'],
+      sans: ['FZYiHei-M20T', 'sans-serif'],
       serif: ['Merriweather', 'serif'],
     },
     extend: {
       colors: {
         'mana-black': '#454545',
-        'mana-dark-purple': "#4D488C",
+        'mana-dark-purple': '#4D488C',
         'mana-purple': '#8c82ff',
         'patreon-orange': '#ff6855',
         'paypal-blue': '#003087',
       },
       spacing: {
-        '128': '32rem',
-        '144': '36rem',
+        128: '32rem',
+        144: '36rem',
       },
       borderRadius: {
         '4xl': '2rem',
-      }
-    }
+      },
+    },
   },
   plugins: [],
-}
+};

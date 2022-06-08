@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=ZCOOL+KuaiLe&display=swap');
 
+@font-face {
+  font-family: FZYiHei-M20T;
+  src: url(./assets/FZYiHei-M20T.ttf);
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
