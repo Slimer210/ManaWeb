@@ -33,7 +33,7 @@ module.exports = {
         '4xl': '2rem',
       },
       backgroundImage: {
-        'mana-landing': "url('src/assets/img/landingPhoto.png')",
+        'mana-landing': "url('img/landingPhoto.png')",
       },
     },
   },
