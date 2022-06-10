@@ -6,6 +6,7 @@ import { Helmet } from 'react-helmet';
 
 // import image and logo
 import manaLogo from './assets/manalogo.png';
+import backgroundImage from './assets/img/landingPhoto.png';
 import mana_fireball_icon from './assets/img/mana_fireball_icon.png';
 import mana_food_icon from './assets/img/mana_food_icon.png';
 import mana_mineral_icon from './assets/img/mana_mineral_icon.png';
@@ -71,7 +72,7 @@ function App() {
           </p>
           <button type="button" className="bg-mana-purple mt-6 text-white text-3xl hover:text-white hover:scale-110 hover:bg-mana-dark-purple hover:rotate-3 px-16 py-5 rounded-lg duration-300 shadow-xl">立即下载</button>
         </div>
-        <div className="relative p-[1rem] w-full bg-mana-landing max-w-5xl h-4/5 m-20 rounded-lg">
+        <div className="relative p-[1rem] w-full max-w-5xl h-4/5 m-20 rounded-lg" style={{ backgroundImage: `url("${backgroundImage}")` }}>
           <div className="rounded-lg absolute -left-16 top-4 bg-slate-50 px-8 py-6 shadow-xl text-2xl text-mana-black">
             <p>
               全新
