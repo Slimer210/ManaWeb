@@ -20,5 +20,9 @@
 
  - **Vercel** - 作爲測試伺服器
 
+## 更新記錄
+
+- Alpha V0.0.1 - 完成基礎架設（目前所有功能還無法使用，僅主頁可以使用）
+
 ## 特別感謝
 - [melvinchia3636](https://github.com/melvinchia3636) - UI設計
