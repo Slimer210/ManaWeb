@@ -5,7 +5,9 @@
   src: url(./assets/FZYiHei-M20T.ttf);
 }
 
-
+body::-webkit-scrollbar {
+  display: none;
+}
 
 @tailwind base;
 @tailwind components;
