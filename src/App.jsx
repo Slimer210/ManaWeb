@@ -1,47 +1,29 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable camelcase */
 // import basic module
+
 import React from 'react';
 import { Icon } from '@iconify/react';
 import { Helmet } from 'react-helmet';
-import PerfectScrollbar from 'react-perfect-scrollbar';
+import { BrowserRouter, Routes, Route, Link, NavLink } from 'react-router-dom';
+
+import Main from './routes/Main';
+import Download from './routes/Download';
+import Docs from './routes/Docs';
+import About from './routes/About';
+import Announcement from './routes/Announcement';
+import Support from './routes/Support';
 
 // import image and logo
 import manaLogo from './assets/manalogo.png';
-import backgroundImage from './assets/img/landingPhoto.png';
-import mana_fireball_icon from './assets/img/mana_fireball_icon.png';
-import mana_food_icon from './assets/img/mana_food_icon.png';
-import mana_mineral_icon from './assets/img/mana_mineral_icon.png';
-import mana_earth_icon from './assets/img/mana_earth_icon.png';
-import mana_money_icon from './assets/img/mana_money_icon.png';
 
-const navigation = [
-  { name: '下载', href: '#', current: false },
-  { name: '手册', href: '#', current: false },
-  { name: '公告', href: '#', current: false },
-  { name: '关于', href: '#', current: false },
-  { name: '支持我们', href: '#', current: false },
-];
-
-const manaIMG = [
-  { src: 'https://i.imgur.com/2Sbpaf3.png' },
-  { src: 'https://i.imgur.com/jGPnM44.png' },
-  { src: 'https://i.imgur.com/RgCaQc0.png' },
-  { src: 'https://i.imgur.com/9oDnM9h.png' },
-  { src: 'https://i.imgur.com/R6ArUQV.png' },
-  { src: 'https://i.imgur.com/8My4DFK.png' },
-];
-
-const articles = [
-  {
-    title: '魔法金属更新公告', content: 'lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet ', image: 'https://i.imgur.com/Kwys2KL.png', tag: '更新公告',
-  },
-  {
-    title: '魔法金属更新公告2', content: 'lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet ', image: 'https://i.imgur.com/Kwys2KL.png', tag: '2更新公告',
-  },
-  {
-    title: '魔法金属更新公告3', content: 'lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet ', image: 'https://i.imgur.com/Kwys2KL.png', tag: '3更新公告',
-  },
+const navigationItem = [
+  { name: '下载', href: 'download' },
+  { name: '手册', href: 'docs' },
+  { name: '公告', href: 'announcement' },
+  { name: '关于', href: 'about' },
+  { name: '支持我们', href: 'support' },
 ];
 
 function NavigationBar() {
@@ -53,19 +35,38 @@ function NavigationBar() {
         <link href="http://mysite.com/example" />
       </Helmet>
       <div className="w-full flex grow justify-between item-center px-5 py-5 drop-shadow-md bg-white top-0 left-0 fixed h-24 z-40">
-        <div className="cursor-pointer select-none flex-shrink-0 flex items-center px-3 py-3 active:text-mana-dark-purple hover:text-mana-dark-purple duration-300 hover:scale-110" href="#">
+        <Link to="/" className="cursor-pointer select-none flex-shrink-0 flex items-center px-3 py-3 active:text-mana-dark-purple hover:text-mana-dark-purple duration-300 hover:scale-110">
           <img
             className="block w-12 h-12 drop-shadow-none"
             src={manaLogo}
             alt="ManaMetal LOGO"
           />
-          <h1 className="pl-4 text-2xl">魔法金属官方网站</h1>
-        </div>
+          <h1 className="pl-4 text-2xl">魔法金属</h1>
+        </Link>
         <div className="font-sans-serif flex flex-nowrap items-center justify-center gap-x-5">
-          {navigation.map((item, index) => (
-            <a className={`select-none px-8 py-4 text-[1.2rem] content-center whitespace-nowrap rounded-lg active:text-mana-dark-purple hover:text-mana-dark-purple hover:scale-110 duration-300 ${index === 4 ? 'bg-mana-purple text-white hover:text-white hover:bg-mana-dark-purple hover:rotate-3 shadow-md' : ' '}`} key={item.name} href={item.href}>{item.name}</a>
+          {navigationItem.map((item, index) => (
+            <NavLink to={item.href} className={`select-none px-8 py-4 text-[1.2rem] content-center whitespace-nowrap rounded-lg active:text-mana-dark-purple hover:text-mana-dark-purple hover:scale-110 duration-300 ${index === 4 ? 'bg-mana-purple text-white hover:text-white hover:bg-mana-dark-purple hover:rotate-3 shadow-md' : ' '}`} key={item.name}>{item.name}</NavLink>
           ))}
         </div>
+      </div>
+    </div>
+  );
+}
+
+const footerItem = [
+  { name: 'Discord', href: 'https://discord.gg/JGTVQzD', icon: 'akar-icons:discord-fill' },
+  { name: 'CurseForge', href: 'https://www.curseforge.com/minecraft/mc-mods/manametal', icon: 'simple-icons:curseforge' },
+  { name: 'Facebook', href: 'https://www.facebook.com/manametalmod/', icon: 'ant-design:facebook-filled' },
+]
+
+function Footer() {
+  return (
+    <div className="w-full flex flex-row justify-between">
+      <h2 className="p-8 font-sans text-mana-purple">魔法金属 Est. 2020</h2>
+      <div className="flex flex-row items-center">
+        {footerItem.map((item) => (
+          <a href={item.href} className="px-8"><Icon className="text-2xl text-mana-purple" icon={item.icon} /></a>
+        ))}
       </div>
     </div>
   );
@@ -74,157 +75,18 @@ function NavigationBar() {
 // tailwind 3.0 yyds
 function App() {
   return (
-    <main className="flex flex-col w-full mt-[6rem]">
+    <BrowserRouter>
       <NavigationBar />
-      <PerfectScrollbar>
-        <div className="w-full flex justify-between h-[calc(100vh-6rem)] overflow-visible px-10 mx-auto bg-slate-100">
-          <div className="flex-col self-center px-10 text-center laptop:text-left flex-shrink-0">
-            <h1 className="text-[5rem] text-mana-black tracking-wide leading-snug">
-              {' '}
-              最
-              <strong className="text-mana-purple text-[8rem]">强大</strong>
-              的
-              {' '}
-              <br />
-              {' '}
-              RPG模组
-            </h1>
-            <p className="py-5 text-2xl leading-9 font-body tracking-widest">
-              想體驗豐富的角色扮演嗎？
-              <br />
-              是否渴望過在麥塊世界有多人職業的玩法？
-              <br />
-              史上最強大MMORPG模組可以給你完整的體驗！
-            </p>
-            <button type="button" className="bg-mana-purple mt-6 text-white text-3xl hover:text-white hover:scale-110 hover:bg-mana-dark-purple hover:rotate-3 px-16 py-5 rounded-lg duration-300 shadow-xl">立即下载</button>
-          </div>
-          <div className="relative p-[1rem] w-full max-w-5xl h-4/5 m-20 rounded-lg bg-cover" style={{ backgroundImage: `url("${backgroundImage}")` }}>
-            <div className="flex flex-column rounded-lg absolute -left-16 top-4 bg-slate-50 px-8 py-6 shadow-xl text-2xl text-mana-black items-center">
-              <img className="w-12 h-12 mr-4" src={mana_money_icon} alt="食物" />
-              <p>
-                金钱
-                <span className="!text-mana-purple">交易系统</span>
-              </p>
-            </div>
-            <div className="flex flex-column rounded-lg absolute bottom-4 -right-16 bg-slate-50 px-8 py-6 shadow-xl text-2xl text-mana-black items-center">
-              <img className="w-16 h-16 mr-4" src={mana_earth_icon} alt="食物" />
-              <p>
-                多元
-                <span className="!text-mana-purple">生态系统</span>
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="bg-white">
-          <div className="flex flex-row items-center px-12 py-8">
-            <img
-              className="block w-12 h-12 drop-shadow-none"
-              src={manaLogo}
-              alt="ManaMetal LOGO"
-            />
-            <h1 className="px-5 py-3 text-[2rem] !text-mana-black">模组特色</h1>
-          </div>
-          <div className="flex flex-wrap justify-around items-center gap-4 mx-12 mb-32">
-            <div className="box-border p-6 h-min bg-white shadow-xl rounded-lg flex-1">
-              <img className="w-16 h-16 mb-6" src={mana_food_icon} alt="食物" />
-              <h1 className="text-5xl tracking-widest">饮食与生活技能</h1>
-              <p className="py-5 text-xl leading-8 font-body tracking-widest">
-                不局限於香草麥塊的食物，
-                <br />
-                多種料理和飲料相關食譜！
-                <br />
-                成為每一項生活技能的達人吧！
-              </p>
-            </div>
-            <div className="box-border p-6 h-1/2 bg-mana-purple shadow-xl text-white rounded-lg flex-1 flex flex-col">
-              <img className="w-16 h-16 mb-6" src={mana_fireball_icon} alt="战斗" />
-              <h1 className="text-5xl tracking-widest">职业PVE系统</h1>
-              <p className="py-5 text-xl leading-8 font-body tracking-widest h-full">
-                九大職業帶來全新玩法
-                <br />
-                各職業的所屬技能以及絕技，
-                <br />
-                於各路夥伴中獨樹一幟！
-              </p>
-              <button type="button" className="bg-white w-full text-center p-6 !text-mana-purple text-xl rounded-md">
-                阅读更多
-              </button>
-            </div>
-            <div className="box-border h-min p-6 shadow-xl bg-white rounded-lg flex-1">
-              <img className="w-16 h-16 mb-6" src={mana_mineral_icon} alt="矿物" />
-              <h1 className="text-5xl tracking-widest">超丰富原矿</h1>
-              <p className="py-5 text-xl leading-8 font-body tracking-widest">
-                香草生存的礦物太少了？
-                <br />
-                此模組擁有著超大量種類的原礦，
-                <br />
-                挖礦愛好者的首選！
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="bg-slate-100">
-          <div className="flex flex-row items-center px-12 py-8">
-            <img
-              className="block w-12 h-12 drop-shadow-none"
-              src={manaLogo}
-              alt="ManaMetal LOGO"
-            />
-            <h1 className="px-5 py-3 text-[2rem] !text-mana-black">模组截图</h1>
-          </div>
-          <div className="grid grid-cols-2 gap-16 p-12">
-            {manaIMG.map((item) => (
-              <img src={item.src} className="rounded-lg" />
-            ))}
-          </div>
-        </div>
-        <div className="bg-white">
-          <div className="flex flex-row items-center px-12 py-3">
-            <img
-              className="block w-12 h-12 drop-shadow-none"
-              src={manaLogo}
-              alt="ManaMetal LOGO"
-            />
-            <h1 className="px-5 py-3 text-[2rem] !text-mana-black">最新公告</h1>
-          </div>
-          <div className="flex items-stretch">
-            {articles.map((item) => (
-              <div className="flex-col m-12 drop-shadow-lg rounded-lg border-2">
-                <img src={item.image} className="aspect-square object-cover rounded-lg shadow-none" />
-                <h2 className="text-mana-purple px-6 pt-4 font-body tracking-wide">{item.tag}</h2>
-                <h1 className="text-mana-black px-6 pb-2 text-[2rem] tracking-wide">{item.title}</h1>
-                <div className="pb-6"><p className="line-clamp-3 px-6 font-body tracking-wide">{item.content}</p></div>
-              </div>
-            ))}
-          </div>
-          <div className="flex flex-col items-center px-12 w-full">
-            <h1 className="text-[5rem] text-mana-black tracking-wide leading-snug align-center text-center">
-              {' '}
-              还在犹豫什么？
-              <br />
-              <strong className="text-mana-purple text-center">立即下载</strong>
-              吧！
-            </h1>
-            <div>
-              <p className="py-5 text-2xl leading-9 font-body tracking-widest text-center">
-                是不是蠢蠢欲動了呢？趕快下載體驗吧！
-                <br />
-                當你猶豫就是你想要了，即刻前往魔法金屬的世界探索一番吧！！
-              </p>
-            </div>
-            <button type="button" className="bg-mana-purple mt-6 text-white text-3xl hover:text-white hover:scale-110 hover:bg-mana-dark-purple hover:rotate-3 px-16 py-5 rounded-lg duration-300 shadow-xl">立即下载</button>
-          </div>
-        </div>
-        <div className="w-full flex flex-row justify-between">
-          <h2 className="p-8 font-sans text-mana-purple">魔法金属 Est. 2020</h2>
-          <div className="flex flex-row items-center">
-            <Icon className="mx-8 text-2xl text-mana-purple" icon="akar-icons:discord-fill" />
-            <Icon className="mx-8 text-2xl text-mana-purple" icon="simple-icons:curseforge" />
-            <Icon className="mx-8 text-2xl text-mana-purple" icon="ant-design:facebook-filled" />
-          </div>
-        </div>
-      </PerfectScrollbar>
-    </main>
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="announcement" element={<Announcement />} />
+        <Route path="docs" element={<Docs />} />
+        <Route path="support" element={<Support />} />
+        <Route path="download" element={<Download />} />
+        <Route path="about" element={<About />} />
+      </Routes>
+      <Footer />
+    </BrowserRouter>
   );
 }
 
