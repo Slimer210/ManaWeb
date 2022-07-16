@@ -33,8 +33,8 @@ const articles = [
 export default function Main() {
   return (
     <main>
-      <div className="mt-24 w-full flex flex-col mobile:flex-row justify-between overflow-visible px-10 bg-slate-100">
-        <div className="self-center pl-24 pt-32 text-center laptop:text-left basis-1/2 flex flex-col h-[calc(100vh-6rem)]">
+      <div className="mt-24 w-full flex flex-col mobile:flex-row justify-between overflow-visible px-10 h-[90vh]">
+        <div className="self-center pl-24 text-center laptop:text-left basis-1/2 flex flex-col">
           <h1 className="text-[5rem] text-mana-black tracking-wide leading-snug">
             {' '}
             最
