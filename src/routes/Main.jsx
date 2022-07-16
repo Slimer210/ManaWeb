@@ -1,6 +1,6 @@
+/* eslint-disable camelcase */
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Carousel } from 'react-responsive-carousel';
 import manaLogo from '../assets/manalogo.png';
 import backgroundImage from '../assets/img/landingPhoto.png';
 import mana_fireball_icon from '../assets/img/mana_fireball_icon.png';
@@ -33,8 +33,8 @@ const articles = [
 export default function Main() {
   return (
     <main>
-      <div className="mt-24 w-full flex flex-col mobile:flex-row justify-between h-[calc(100vh-6rem)] overflow-visible px-10 mx-auto bg-slate-100">
-        <div className="flex-col self-center px-10 text-center laptop:text-left basis-1/2">
+      <div className="mt-24 w-full flex flex-col mobile:flex-row justify-between overflow-visible px-10 bg-slate-100">
+        <div className="self-center pl-24 pt-32 text-center laptop:text-left basis-1/2 flex flex-col h-[calc(100vh-6rem)]">
           <h1 className="text-[5rem] text-mana-black tracking-wide leading-snug">
             {' '}
             最
@@ -52,18 +52,18 @@ export default function Main() {
             <br />
             史上最強大MMORPG模組可以給你完整的體驗！
           </p>
-          <Link className="bg-mana-purple mt-6 text-white text-3xl hover:text-white hover:scale-110 hover:bg-mana-dark-purple hover:rotate-3 px-16 py-5 rounded-lg duration-300 shadow-xl" to="download">立即下载</Link>
+          <Link className="w-[16rem] bg-mana-purple mt-6 text-white text-3xl hover:text-white hover:scale-110 hover:bg-mana-dark-purple hover:rotate-3 px-16 py-5 rounded-lg duration-300 shadow-xl" to="download">立即下载</Link>
         </div>
-        <div className="relative p-[1rem] w-full max-w-5xl h-4/5 m-20 rounded-lg bg-cover" style={{ backgroundImage: `url("${backgroundImage}")` }}>
+        <div className="relative p-[1rem] m-20 rounded-lg bg-cover basis-1/2" style={{ backgroundImage: `url("${backgroundImage}")` }}>
           <div className="flex flex-column rounded-lg absolute -left-16 top-4 bg-slate-50 px-8 py-6 shadow-xl text-2xl text-mana-black items-center basis-1/2">
-            <img className="w-12 h-12 mr-4" src={mana_money_icon} />
+            <img className="w-12 h-12 mr-4" src={mana_money_icon} alt="" />
             <p>
               金钱
               <span className="!text-mana-purple">交易系统</span>
             </p>
           </div>
           <div className="flex flex-column rounded-lg absolute bottom-4 -right-16 bg-slate-50 px-8 py-6 shadow-xl text-2xl text-mana-black items-center">
-            <img className="w-16 h-16 mr-4" src={mana_earth_icon} />
+            <img className="w-16 h-16 mr-4" src={mana_earth_icon} alt="" />
             <p>
               多元
               <span className="!text-mana-purple">生态系统</span>
@@ -80,8 +80,8 @@ export default function Main() {
           />
           <h1 className="px-5 py-3 text-[2rem] !text-mana-black">模组特色</h1>
         </div>
-        <div className="flex flex-wrap justify-center items-center gap-4 mx-12 mb-32">
-          <div className="box-border p-6 h-min bg-white shadow-xl rounded-lg flex-none w-[20rem]">
+        <div className="flex justify-center items-center gap-4 mx-32 mb-32">
+          <div className="box-border p-6 h-min bg-white shadow-xl rounded-lg flex-1">
             <img className="w-16 h-16 mb-6" src={mana_food_icon} alt="食物" />
             <h1 className="text-5xl tracking-widest">
               饮食与
@@ -96,7 +96,7 @@ export default function Main() {
               成為每一項生活技能的達人吧！
             </p>
           </div>
-          <div className="box-border p-6 h-1/2 bg-mana-purple shadow-xl text-white rounded-lg flex-none flex flex-col w-[20rem]">
+          <div className="box-border p-6 h-[28rem] bg-mana-purple shadow-xl text-white rounded-lg flex flex-col flex-1">
             <img className="w-16 h-16 mb-6" src={mana_fireball_icon} alt="战斗" />
             <h1 className="text-5xl tracking-widest">职业PVE系统</h1>
             <p className="py-5 text-xl leading-8 font-body tracking-widest h-full">
@@ -106,11 +106,11 @@ export default function Main() {
               <br />
               於各路夥伴中獨樹一幟！
             </p>
-            <button type="button" className="bg-white w-full text-center p-6 !text-mana-purple text-xl rounded-md">
+            <button type="button" className="bg-white w-full text-center p-6 !text-mana-purple text-2xl rounded-md">
               阅读更多
             </button>
           </div>
-          <div className="box-border h-min p-6 shadow-xl bg-white rounded-lg flex-none w-[20rem]">
+          <div className="box-border h-min p-6 shadow-xl bg-white rounded-lg flex-1">
             <img className="w-16 h-16 mb-6" src={mana_mineral_icon} alt="矿物" />
             <h1 className="text-5xl tracking-widest">
               非常丰富
@@ -136,14 +136,12 @@ export default function Main() {
           />
           <h1 className="px-5 py-3 text-[2rem] !text-mana-black">模组截图</h1>
         </div>
-        <div className="flex m-12 gap-12 p-12">
-          <Carousel>
-            {manaIMG.map((item) => (
-              <div>
-                <img src={item.src} className="rounded-lg" alt=" " />
-              </div>
-            ))}
-          </Carousel>
+        <div className="grid grid-cols-2 gap-12 p-12">
+          {manaIMG.map((item) => (
+            <div>
+              <img src={item.src} className="rounded-lg" alt=" " />
+            </div>
+          ))}
         </div>
       </div>
       <div className="bg-white">
@@ -185,5 +183,5 @@ export default function Main() {
       </div>
 
     </main>
-  )
+  );
 }

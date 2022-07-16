@@ -12,3 +12,16 @@ body::-webkit-scrollbar {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+p {
+  @apply font-normal
+}
+
+tr {
+  @apply font-normal text-[1.5rem]
+}
+
+th {
+  @apply font-normal text-[1.5rem]
+}
