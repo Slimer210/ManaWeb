@@ -1,3 +1,5 @@
+/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable global-require */
 module.exports = {
   content: [
     './index.html',
@@ -6,8 +8,8 @@ module.exports = {
   theme: {
     screens: {
       mobile: '480px',
-      tablet: '768px',
-      laptop: '960px',
+      tablet: '800px',
+      laptop: '1050px',
       desktop: '1360px',
     },
 
@@ -45,8 +47,7 @@ module.exports = {
     },
   },
   plugins: [
-    // eslint-disable-next-line global-require
     require('@tailwindcss/line-clamp'),
-    // ...
+    require('tailwind-scrollbar'),
   ],
 };

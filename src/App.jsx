@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/control-has-associated-label */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable camelcase */
@@ -43,7 +44,9 @@ function NavigationBar() {
           />
           <h1 className="pl-4 text-2xl">魔法金属</h1>
         </Link>
-        <div className="font-sans-serif flex flex-nowrap items-center justify-center gap-x-5">
+
+        <button type="button" className="tablet:hidden block" onClick={null}><Icon className="text-3xl" icon="bi:list" /></button>
+        <div className="font-sans-serif hidden flex-nowrap items-center justify-center gap-x-5 tablet:flex">
           {navigationItem.map((item) => (
             <NavLink
               to={item.href}
@@ -69,7 +72,9 @@ const footerItem = [
 function Footer() {
   return (
     <footer className="w-full flex flex-row justify-between">
-      <h2 className="p-8 font-sans text-mana-purple">魔法金属 Est. 2020</h2>
+      <div className="flex flex-row">
+        <h2 className="p-8 font-sans text-mana-purple">魔法金属 Est. 2020（预览版v0.1）</h2>
+      </div>
       <div className="flex flex-row items-center">
         {footerItem.map((item) => (
           <a href={item.href} className="px-8" aria-label="item.icon"><Icon className="text-2xl text-mana-purple" icon={item.icon} /></a>

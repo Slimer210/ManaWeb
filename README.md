@@ -1,3 +1,4 @@
+![魔法金屬](https://github.com/Slimer210/Slimer210/raw/main/OpenGraphImage.jpg)
 # ManaWeb - 魔法金屬官方網站
 
 > 此作業不可用於商業用途或非法用途。
@@ -7,20 +8,16 @@
 
 我很希望這種非常值得遊玩的模組能得到更大的推廣，以便讓這個費盡心思才做出來的模組得到延續。
 
-### 本官方網站開發的主要目的有幾點：
-
- - 通過良好的SEO以及完美的主頁設計，**吸引大量玩家體驗魔法金屬**；
- - **完善化下載功能**，使大量新玩家容易安裝及體驗魔法金屬；
- - **將Wiki、詞典等功能完善化**，提升用戶體驗及整體性能。
+[點此閲覽網頁](https://mana-web.vercel.app/)
 
 ### 安裝
 1. 克隆此作業
     ```
-    git clone https://github.com/Slimer210/ManaWeb/ManaWeb.git/
+    git clone https://github.com/Slimer210/ManaWeb/
     ```
 2. 執行模組安裝
     ```
-    yarn 
+    yarn | npm i
     ```
     
 3. 啓動伺服器
@@ -40,7 +37,8 @@
 
 ### 所使用的工具、服務：
 
- - **Vercel** - 作爲測試部署伺服器
+ - **Vercel** - 部署伺服器
+ - **Figma** - 設計
 
 ## 更新記錄
 
@@ -51,6 +49,11 @@
   - “下載” 頁面完成
   - 鏈接React Router
   - 簡化及整理主頁代碼
+
+- Indev V0.1.0 開發預覽版0.1
+  - 清除多餘樣式
+  - 主頁自適應設計
+  - 新增OpenGraph標簽
 
 ## 特別感謝
 - [melvinchia3636](https://github.com/melvinchia3636) - UI設計

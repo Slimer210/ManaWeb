@@ -1,6 +1,12 @@
 /* eslint-disable camelcase */
 import React from 'react';
+// React Router
 import { Link } from 'react-router-dom';
+// Carousel
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+
+// Assets
 import manaLogo from '../assets/manalogo.png';
 import backgroundImage from '../assets/img/landingPhoto.png';
 import mana_fireball_icon from '../assets/img/mana_fireball_icon.png';
@@ -33,8 +39,8 @@ const articles = [
 export default function Main() {
   return (
     <main>
-      <div className="mt-24 w-full flex flex-col mobile:flex-row justify-between overflow-visible px-10 h-[90vh]">
-        <div className="self-center pl-24 text-center laptop:text-left basis-1/2 flex flex-col">
+      <div className="mt-24 w-screen flex laptop:flex-row flex-col justify-between overflow-visible laptop:h-max min-h-full h-max">
+        <div className="self-center laptop:px-24 px-8 text-center laptop:text-left basis-1/2 flex flex-col laptop:items-start items-center h-max">
           <h1 className="text-[5rem] text-mana-black tracking-wide leading-snug">
             {' '}
             最
@@ -54,15 +60,15 @@ export default function Main() {
           </p>
           <Link className="w-[16rem] bg-mana-purple mt-6 text-white text-3xl hover:text-white hover:scale-110 hover:bg-mana-dark-purple hover:rotate-3 px-16 py-5 rounded-lg duration-300 shadow-xl" to="download">立即下载</Link>
         </div>
-        <div className="relative p-[1rem] m-20 rounded-lg bg-cover basis-1/2" style={{ backgroundImage: `url("${backgroundImage}")` }}>
-          <div className="flex flex-column rounded-lg absolute -left-16 top-4 bg-slate-50 px-8 py-6 shadow-xl text-2xl text-mana-black items-center basis-1/2">
+        <div className="relative p-[1rem] tablet:m-20 my-10 mx-5 rounded-lg bg-cover basis-1/2 min-h-[50vh]" style={{ backgroundImage: `url("${backgroundImage}")` }}>
+          <div className="tablet:visible invisible flex flex-column rounded-lg absolute -left-16 top-4 bg-slate-50 px-8 py-6 shadow-xl text-2xl text-mana-black items-center basis-1/2">
             <img className="w-12 h-12 mr-4" src={mana_money_icon} alt="" />
             <p>
               金钱
               <span className="!text-mana-purple">交易系统</span>
             </p>
           </div>
-          <div className="flex flex-column rounded-lg absolute bottom-4 -right-16 bg-slate-50 px-8 py-6 shadow-xl text-2xl text-mana-black items-center">
+          <div className="tablet:visible invisible flex flex-column rounded-lg absolute bottom-4 -right-16 bg-slate-50 px-8 py-6 shadow-xl text-2xl text-mana-black items-center">
             <img className="w-16 h-16 mr-4" src={mana_earth_icon} alt="" />
             <p>
               多元
@@ -80,8 +86,8 @@ export default function Main() {
           />
           <h1 className="px-5 py-3 text-[2rem] !text-mana-black">模组特色</h1>
         </div>
-        <div className="flex justify-center items-center gap-4 mx-32 mb-32">
-          <div className="box-border p-6 h-min bg-white shadow-xl rounded-lg flex-1">
+        <div className="flex justify-center items-center gap-y-4 mx-32 mb-32 laptop:flex-row flex-col">
+          <div className="box-border p-6 h-min bg-white shadow-xl rounded-lg flex-1 w-[90vw]">
             <img className="w-16 h-16 mb-6" src={mana_food_icon} alt="食物" />
             <h1 className="text-5xl tracking-widest">
               饮食与
@@ -96,7 +102,7 @@ export default function Main() {
               成為每一項生活技能的達人吧！
             </p>
           </div>
-          <div className="box-border p-6 h-[28rem] bg-mana-purple shadow-xl text-white rounded-lg flex flex-col flex-1">
+          <div className="box-border p-6 min-h-[20rem] bg-mana-purple shadow-xl text-white rounded-lg flex flex-col flex-1 w-[90vw]">
             <img className="w-16 h-16 mb-6" src={mana_fireball_icon} alt="战斗" />
             <h1 className="text-5xl tracking-widest">职业PVE系统</h1>
             <p className="py-5 text-xl leading-8 font-body tracking-widest h-full">
@@ -110,7 +116,7 @@ export default function Main() {
               阅读更多
             </button>
           </div>
-          <div className="box-border h-min p-6 shadow-xl bg-white rounded-lg flex-1">
+          <div className="box-border h-min p-6 shadow-xl bg-white rounded-lg flex-1 w-[90vw]">
             <img className="w-16 h-16 mb-6" src={mana_mineral_icon} alt="矿物" />
             <h1 className="text-5xl tracking-widest">
               非常丰富
@@ -136,12 +142,14 @@ export default function Main() {
           />
           <h1 className="px-5 py-3 text-[2rem] !text-mana-black">模组截图</h1>
         </div>
-        <div className="grid grid-cols-2 gap-12 p-12">
-          {manaIMG.map((item) => (
-            <div>
-              <img src={item.src} className="rounded-lg" alt=" " />
-            </div>
-          ))}
+        <div className="flex items-center justify-center p-12">
+          <Carousel className="items-center max-w-screen-laptop w-[90vw]" showStatus={false} autoPlay stopOnHover swipeable infiniteLoop interval={5000} dynamicHeight>
+            {manaIMG.map((item) => (
+              <div>
+                <img src={item.src} alt="test" />
+              </div>
+            ))}
+          </Carousel>
         </div>
       </div>
       <div className="bg-white">
@@ -151,11 +159,11 @@ export default function Main() {
             src={manaLogo}
             alt="ManaMetal LOGO"
           />
-          <h1 className="px-5 py-3 text-[2rem] !text-mana-black">最新公告</h1>
+          <h1 className="px-5 py-5 text-[2rem] !text-mana-black">最新公告</h1>
         </div>
-        <div className="flex flex-col mobile:flex-row items-stretch">
+        <div className="flex items-stretch tablet:flex-row flex-col p-6 gap-6">
           {articles.map((item) => (
-            <div className="flex-col m-12 drop-shadow-lg rounded-lg border-2">
+            <div className="flex-col mb-6 drop-shadow-lg rounded-lg border-2">
               <img src={item.image} className="aspect-square object-cover rounded-lg shadow-none" alt=" " />
               <h2 className="text-mana-purple px-6 pt-4 font-body tracking-wide">{item.tag}</h2>
               <h1 className="text-mana-black px-6 pb-2 text-[2rem] tracking-wide">{item.title}</h1>
@@ -163,7 +171,7 @@ export default function Main() {
             </div>
           ))}
         </div>
-        <div className="flex flex-col items-center px-12 w-full">
+        <div className="flex flex-col items-center px-12 w-full min-h-[80vh] place-content-center">
           <h1 className="text-[5rem] text-mana-black tracking-wide leading-snug align-center text-center">
             {' '}
             还在犹豫什么？
