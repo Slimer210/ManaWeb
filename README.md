@@ -1,8 +1,6 @@
 ![魔法金屬](https://github.com/Slimer210/Slimer210/raw/main/OpenGraphImage.jpg)
 # ManaWeb - 魔法金屬官方網站
 
-> 此作業不可用於商業用途或非法用途。
-
 ## 關於ManaWeb
 魔法金屬是一個正在不停開發的麥塊模組。許多MMORPG的玩法在魔法金屬中得到非常舒服的體驗。雖然這個模組非常完善，但較低的曝光率使魔法金屬失去了許多正在尋找這類MMORPG玩法的麥塊玩家。
 
