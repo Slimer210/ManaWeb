@@ -2,14 +2,16 @@ import React from 'react';
 import {
   Link,
 } from 'react-router-dom';
+import moment from 'moment/min/moment-with-locales';
 import manaLogo from '../assets/manalogo.png';
 import { version5x } from '../data/version.json';
-import moment from 'moment';
+
+moment.locale('zh-tw');
 
 export default function Download() {
   return (
     <div className="m-12">
-      <div className="flex flex-col mt-24 flex-1 items-center justify-center">
+      <div className="flex flex-col mt-24 flex-1 items-center justify-center h-[82vh]">
         <img alt="" src={manaLogo} className="w-1/2 h-auto absolute top-1/2 left-1/2 opacity-20 -translate-x-1/2 -translate-y-1/2" />
         <div className="flex flex-col items-center relative z-10">
           <h1 className="text-[6rem] text-mana-black tracking-wide leading-snug text-center">
@@ -24,10 +26,10 @@ export default function Download() {
             欲體驗舊版本的內容，往下滑可查看所有舊版本的更新日誌及下載鏈接。
           </p>
           <div className="m-8">
-            <Link to="/" className="text-white bg-mana-purple m-8 px-12 py-8 rounded-lg text-[3rem] border-8 border-solid border-mana-purple">
+            <Link to="/" className="text-white bg-mana-purple m-8 px-12 py-8 rounded-lg text-[2.5rem] border-8 border-solid border-mana-purple">
               下载自动安装器
             </Link>
-            <Link to="/" className="text-mana-purple bg-slate-50 m-8 px-12 py-8 rounded-lg text-[3rem] border-8 border-solid border-mana-purple">
+            <Link to="/" className="text-mana-purple bg-slate-50 m-8 px-12 py-8 rounded-lg text-[2.5rem] border-8 border-solid border-mana-purple">
               手动安装
             </Link>
           </div>
@@ -60,9 +62,9 @@ export default function Download() {
               {[
                 data.releaseDate,
               ].map((item) => (
-                <td className="px-4 py-4 text-[1.5rem] font-normal border-2 border-slate-100">{moment("1995-12-25").format(
-                  "YYYY-MM-DD"
-                )}</td>
+                <td className="px-4 py-4 text-[1.5rem] font-normal border-2 border-slate-100">
+                  {moment(item).format('LL')}
+                </td>
               ))}
               {[
                 data.releaseNotesLink,

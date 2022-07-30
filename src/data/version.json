@@ -1,5 +1,5 @@
 {
-    "version5x":[
+    "version5x": [
         {"version":"5.1.2", "releaseDate":"20220430", "releaseNotesLink": "https://example.com/", "downloadLink": "https://example.com/"},
         {"version":"5.1.1", "releaseDate":"20220201", "releaseNotesLink": "https://example.com/", "downloadLink": "https://example.com/"},
         {"version":"5.1.0", "releaseDate":"20220131", "releaseNotesLink": "https://example.com/", "downloadLink": "https://example.com/"}

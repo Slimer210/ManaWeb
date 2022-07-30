@@ -19,13 +19,13 @@ import Support from './routes/Support';
 
 // import image and logo
 import manaLogo from './assets/manalogo.png';
+import openGraphImage from './assets/img/OpenGraphImage.jpg';
 
 const navigationItem = [
   { name: '下载', href: 'download' },
   { name: '手册', href: 'docs' },
   { name: '公告', href: 'announcement' },
   { name: '关于', href: 'about' },
-  { name: '支持我们', href: 'support' },
 ];
 
 function NavigationBar() {
@@ -35,8 +35,7 @@ function NavigationBar() {
         <meta charSet="utf-8" />
         <title>魔法金屬官方網站</title>
         <link href="http://mysite.com/example" />
-        <meta property="og:image" content="https://slimer.dev/manaCover.png" />
-        <meta property="og:image:url" content="https://slimer.dev/manaCover.png" />
+        <meta property="og:image" content={openGraphImage} />
       </Helmet>
       <nav className="w-full flex grow justify-between item-center px-5 py-5 drop-shadow-md bg-white top-0 left-0 fixed h-24 z-40">
         <Link to="/" className="cursor-pointer select-none flex-shrink-0 flex items-center px-3 py-3 active:text-mana-dark-purple hover:text-mana-dark-purple duration-300 hover:scale-110">
@@ -48,9 +47,17 @@ function NavigationBar() {
           <h1 className="pl-4 text-2xl">魔法金属</h1>
         </Link>
         <div className="font-sans-serif flex flex-nowrap items-center justify-center gap-x-5">
-          {navigationItem.map((item, index) => (
-            <NavLink to={item.href} className={`select-none px-8 py-4 text-[1.2rem] content-center whitespace-nowrap rounded-lg active:text-mana-dark-purple hover:text-mana-dark-purple hover:scale-110 duration-300 ${index === 4 ? 'bg-mana-purple text-white hover:text-white hover:bg-mana-dark-purple hover:rotate-3 shadow-md' : ' '}`} key={item.name}>{item.name}</NavLink>
+          {navigationItem.map((item) => (
+            <NavLink
+              to={item.href}
+              className="select-none px-8 py-4 text-[1.2rem] content-center whitespace-nowrap rounded-lg active:text-mana-dark-purple hover:text-mana-dark-purple hover:scale-110 duration-300"
+              key={item.name}
+            >
+              {item.name}
+
+            </NavLink>
           ))}
+          <NavLink to="support" className="select-none px-8 py-4 text-[1.2rem] content-center whitespace-nowrap rounded-lg active:text-mana-dark-purple hover:scale-110 duration-300 bg-mana-purple text-white hover:text-white hover:bg-mana-dark-purple hover:rotate-3 shadow-md">支持我们</NavLink>
         </div>
       </nav>
     </>
