@@ -11,7 +11,7 @@ moment.locale('zh-tw');
 export default function Download() {
   return (
     <div className="m-12">
-      <div className="flex flex-col mt-24 flex-1 items-center justify-center h-[82vh]">
+      <div className="flex flex-col mt-24 flex-1 items-center justify-center min-h-[82vh] max-h-fit">
         <img alt="" src={manaLogo} className="w-1/2 h-auto absolute top-1/2 left-1/2 opacity-20 -translate-x-1/2 -translate-y-1/2" />
         <div className="flex flex-col items-center relative z-10">
           <h1 className="text-[6rem] text-mana-black tracking-wide leading-snug text-center">
@@ -20,16 +20,16 @@ export default function Download() {
             你的
             <span className="text-mana-purple font-semibold">魔法之旅!</span>
           </h1>
-          <p className="font-body py-8 text-center text-2xl tracking-widest">
+          <p className="flex font-body py-8 text-center text-2xl tracking-widest">
             官方推薦直使用最新版本遊玩，以獲得最佳遊戲體驗。
             <br />
             欲體驗舊版本的內容，往下滑可查看所有舊版本的更新日誌及下載鏈接。
           </p>
-          <div className="m-8">
-            <Link to="/" className="text-white bg-mana-purple m-8 px-12 py-8 rounded-lg text-[2.5rem] border-8 border-solid border-mana-purple">
+          <div className="m-8 flex tablet:flex-row flex-col">
+            <Link to="/" className="text-white bg-mana-purple m-8 px-12 py-8 rounded-lg text-[2.5rem] border-8 border-solid border-mana-purple self-center whitespace-nowrap">
               下载自动安装器
             </Link>
-            <Link to="/" className="text-mana-purple bg-slate-50 m-8 px-12 py-8 rounded-lg text-[2.5rem] border-8 border-solid border-mana-purple">
+            <Link to="/" className="text-mana-purple bg-slate-50 m-8 px-12 py-8 rounded-lg text-[2.5rem] border-8 border-solid border-mana-purple self-center whitespace-nowrap">
               手动安装
             </Link>
           </div>

@@ -35,7 +35,9 @@ function NavigationBar() {
         <meta charSet="utf-8" />
         <title>魔法金屬官方網站</title>
       </Helmet>
+      
       <nav className="w-full flex grow justify-between item-center px-5 py-5 drop-shadow-md bg-white top-0 left-0 fixed h-24 z-40">
+      
         <Link to="/" className="cursor-pointer select-none flex-shrink-0 flex items-center px-3 py-3 active:text-mana-dark-purple hover:text-mana-dark-purple duration-300 hover:scale-110">
           <img
             className="block w-12 h-12 drop-shadow-none"
@@ -44,7 +46,6 @@ function NavigationBar() {
           />
           <h1 className="pl-4 text-2xl">魔法金属</h1>
         </Link>
-
         <button type="button" className="tablet:hidden block" onClick={null}><Icon className="text-3xl" icon="bi:list" /></button>
         <div className="font-sans-serif hidden flex-nowrap items-center justify-center gap-x-5 tablet:flex">
           {navigationItem.map((item) => (

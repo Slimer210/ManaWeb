@@ -39,8 +39,8 @@ const articles = [
 export default function Main() {
   return (
     <main>
-      <div className="mt-24 w-screen flex laptop:flex-row flex-col justify-between overflow-visible laptop:h-max min-h-full h-max">
-        <div className="self-center laptop:px-24 px-8 text-center laptop:text-left basis-1/2 flex flex-col laptop:items-start items-center h-max">
+      <div className="mt-24 w-screen flex laptop:flex-row flex-col justify-between overflow-visible laptop:h-max min-h-[90vh] max-h-max">
+        <div className="self-center laptop:px-12 laptop:pl-24 pl-12 px-4 text-center laptop:text-left basis-1/2 flex flex-col laptop:items-start items-center h-max">
           <h1 className="text-[5rem] text-mana-black tracking-wide leading-snug">
             {' '}
             最
@@ -60,7 +60,7 @@ export default function Main() {
           </p>
           <Link className="w-[16rem] bg-mana-purple mt-6 text-white text-3xl hover:text-white hover:scale-110 hover:bg-mana-dark-purple hover:rotate-3 px-16 py-5 rounded-lg duration-300 shadow-xl" to="download">立即下载</Link>
         </div>
-        <div className="relative p-[1rem] tablet:m-20 my-10 mx-5 rounded-lg bg-cover basis-1/2 min-h-[50vh]" style={{ backgroundImage: `url("${backgroundImage}")` }}>
+        <div className="relative p-[1rem] tablet:m-20 my-10 mx-5 rounded-lg bg-cover bg-center basis-1/2 min-h-[50vh]" style={{ backgroundImage: `url("${backgroundImage}")` }}>
           <div className="tablet:visible invisible flex flex-column rounded-lg absolute -left-16 top-4 bg-slate-50 px-8 py-6 shadow-xl text-2xl text-mana-black items-center basis-1/2">
             <img className="w-12 h-12 mr-4" src={mana_money_icon} alt="" />
             <p>
@@ -171,7 +171,7 @@ export default function Main() {
             </div>
           ))}
         </div>
-        <div className="flex flex-col items-center px-12 w-full min-h-[80vh] place-content-center">
+        <div className="flex flex-col items-center tablet:px-12 px-3 w-full min-h-[80vh] place-content-center">
           <h1 className="text-[5rem] text-mana-black tracking-wide leading-snug align-center text-center">
             {' '}
             还在犹豫什么？
