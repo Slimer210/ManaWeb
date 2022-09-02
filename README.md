@@ -4,7 +4,7 @@
 ## 關於ManaWeb
 魔法金屬是一個正在不停開發的麥塊模組。MMORPG的特色成爲了吸引許多玩家游玩的重點。
 
-通過ManaWeb計劃，我想在學習ReactJS的同時可以學到更多的東西，不局限於教學上的一切。
+通過ManaWeb計劃，我想在學習ReactJS的同時可以學到更多的東西。
 
 [點此閲覽網頁](https://mana-web.vercel.app/)
 
