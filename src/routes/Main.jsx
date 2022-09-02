@@ -40,18 +40,15 @@ export default function Main() {
   return (
     <main>
       <div className="mt-24 w-screen flex laptop:flex-row flex-col justify-between overflow-visible laptop:h-max min-h-[90vh] max-h-max">
-        <div className="self-center laptop:px-12 laptop:pl-24 pl-12 px-4 text-center laptop:text-left basis-1/2 flex flex-col laptop:items-start items-center h-max">
+        <div className="self-center laptop:px-12 px-4 text-center laptop:text-left basis-1/2 flex flex-col laptop:items-start items-center h-max">
           <h1 className="text-[5rem] text-mana-black tracking-wide leading-snug">
-            {' '}
             最
             <strong className="text-mana-purple text-[8rem]">强大</strong>
             的
-            {' '}
             <br />
-            {' '}
             RPG模组
           </h1>
-          <p className="py-5 text-2xl leading-9 font-body tracking-widest">
+          <p className="py-8 text-2xl leading-9 font-body tracking-widest">
             想體驗豐富的角色扮演嗎？
             <br />
             是否渴望過在麥塊世界有多人職業的玩法？
@@ -63,17 +60,17 @@ export default function Main() {
         <div className="relative p-[1rem] tablet:m-20 my-10 mx-5 rounded-lg bg-cover bg-center basis-1/2 min-h-[50vh]" style={{ backgroundImage: `url("${backgroundImage}")` }}>
           <div className="tablet:visible invisible flex flex-column rounded-lg absolute -left-16 top-4 bg-slate-50 px-8 py-6 shadow-xl text-2xl text-mana-black items-center basis-1/2">
             <img className="w-12 h-12 mr-4" src={mana_money_icon} alt="" />
-            <p>
+            <h1>
               金钱
               <span className="!text-mana-purple">交易系统</span>
-            </p>
+            </h1>
           </div>
           <div className="tablet:visible invisible flex flex-column rounded-lg absolute bottom-4 -right-16 bg-slate-50 px-8 py-6 shadow-xl text-2xl text-mana-black items-center">
             <img className="w-16 h-16 mr-4" src={mana_earth_icon} alt="" />
-            <p>
+            <h1>
               多元
               <span className="!text-mana-purple">生态系统</span>
-            </p>
+            </h1>
           </div>
         </div>
       </div>
@@ -86,7 +83,7 @@ export default function Main() {
           />
           <h1 className="px-5 py-3 text-[2rem] !text-mana-black">模组特色</h1>
         </div>
-        <div className="flex justify-center items-center gap-y-4 mx-32 mb-32 laptop:flex-row flex-col">
+        <div className="flex justify-center items-center gap-4 mx-32 mb-32 laptop:flex-row flex-col">
           <div className="box-border p-6 h-min bg-white shadow-xl rounded-lg flex-1 w-[90vw]">
             <img className="w-16 h-16 mb-6" src={mana_food_icon} alt="食物" />
             <h1 className="text-5xl tracking-widest">
@@ -143,10 +140,10 @@ export default function Main() {
           <h1 className="px-5 py-3 text-[2rem] !text-mana-black">模组截图</h1>
         </div>
         <div className="flex items-center justify-center p-12">
-          <Carousel className="items-center max-w-screen-laptop w-[90vw]" showStatus={false} autoPlay stopOnHover swipeable infiniteLoop interval={5000} dynamicHeight>
+          <Carousel className="rounded-lg items-center max-w-screen-laptop w-[90vw]" showStatus={false} showThumbs={false} autoPlay stopOnHover swipeable infiniteLoop interval={5000} dynamicHeight>
             {manaIMG.map((item) => (
               <div>
-                <img src={item.src} alt="test" />
+                <img src={item.src} alt="test" width="1050" />
               </div>
             ))}
           </Carousel>

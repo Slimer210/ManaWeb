@@ -15,7 +15,7 @@ module.exports = {
 
     fontFamily: {
       sans: ['FZYiHei-M20T', 'sans-serif'],
-      serif: ['Merriweather', 'serif'],
+      serif: ['FZYiHei-M20T', 'serif'],
       body: ['Noto Sans TC', 'body'],
     },
     extend: {
@@ -48,6 +48,7 @@ module.exports = {
   },
   plugins: [
     require('@tailwindcss/line-clamp'),
+    require('@tailwindcss/typography'),
     require('tailwind-scrollbar'),
   ],
 };

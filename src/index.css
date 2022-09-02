@@ -13,13 +13,33 @@ body {
   background-color: white;}
 
 p {
-  @apply font-normal
+  @apply font-body text-xl tracking-widest
 }
 
 tr {
-  @apply font-normal text-[1.5rem]
+  @apply font-body text-[1.5rem]
 }
 
 th {
-  @apply font-normal text-[1.5rem]
+  @apply font-body text-[1.5rem]
+}
+
+.dot {
+  @apply !bg-mana-purple !shadow-none
+}
+
+.control-arrow {
+  @apply !bg-mana-purple !shadow-none !p-4 !my-16 !text-white opacity-50
+}
+
+.control-prev {
+  @apply !rounded-r-lg
+}
+
+.control-next {
+  @apply !rounded-l-lg
+}
+
+.thumbs {
+  @apply flex flex-row items-center justify-center
 }
