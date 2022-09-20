@@ -25,43 +25,53 @@ export default function Support() {
           當然，若你沒有這個經濟能力也沒關係，下載時透過官方網站下載，並關閉Adblock等阻擋廣告的工具，願意的話順手按一下廣告就可以讓我們擁有一些廣告收益囉。
         </p>
       </div>
-      <div className="flex flex-row px-12">
-        <div className="flex flex-col">
+      <div className="flex flex-row p-12 ">
+        <div className="flex flex-col flex-1">
           <h2 className="text-4xl font-sans text-mana-purple tracking-widest">赞助我们，您将会得到：</h2>
-          <ul className="py-12 list-disc font-body">
-            <li className="py-8">
+          <ul className="py-12 font-body">
+            <li className="py-8 flex items-center text-xl">
+              <div className="rounded-full bg-mana-purple p-2 mx-2">
+                <Icon icon="icon-park-outline:clothes-crew-neck" className="text-white"/>
+              </div>
               用于购买服饰的
               <strong className="text-mana-purple">白金</strong>
               ，在玩家中亮出最特别的自己！
             </li>
-            <li className="py-8">
+            <li className="py-8 flex text-xl">
+              <div className="rounded-full bg-mana-purple p-2 mx-2">
+                <Icon icon="ant-design:tag-outlined" className="text-white"/>
+              </div>
               赞助者
               <strong className="text-mana-purple">专属称号</strong>
               ，不是所有人都能得到！
             </li>
-            <li className="py-8">
+            <li className="py-8 flex text-xl">
+              <div className="rounded-full bg-mana-purple p-2 mx-2">
+                <Icon icon="akar-icons:heart" className="text-white" />
+              </div>
               一颗专属你的
               <strong className="text-mana-purple">爱心</strong>
               ，感谢您的支持！
             </li>
-            <li className="py-8">
+            <li className="py-8 flex text-xl">
               未来将有更多的
               <strong className="text-mana-purple">福利</strong>
               等着你！
             </li>
           </ul>
         </div>
-        <div to="/" className="flex flex-col justify-items-center">
-          <h2>您可以透过</h2>
-          <Link to="/" className="flex flex-row rounded-lg bg-paypal-blue items-center justify-center w-[30vh]">
-            <Icon icon="bi:paypal" className="text-white" />
-            <h2 className="text-white">使用PayPal转账</h2>
+        <div className="flex flex-col justify-center items-center w-[30vw] h-[60vh] gap-y-4">
+          <h2 className="self-center text-3xl">您可以透过</h2>
+          <Link to="/" className="flex flex-row rounded-lg bg-paypal-blue items-center justify-center w-full p-4">
+            <Icon icon="bi:paypal" className="text-white text-xl mx-4" />
+            <h2 className="text-white text-xl">使用PayPal转账</h2>
           </Link>
-          <Link to="/" className="flex flex-row rounded-lg bg-patreon-orange items-center justify-center w-[30vh]">
-            <Icon icon="bxl:patreon" className="text-white" />
-            <h2 className="text-white">购买Patreon会员</h2>
+          <Link to="/" className="flex flex-row rounded-lg bg-patreon-orange items-center justify-center w-full p-4">
+            <Icon icon="bxl:patreon" className="text-white text-xl mx-4" />
+            <h2 className="text-white text-xl">购买Patreon会员</h2>
           </Link>
-          <h2>或银行转账</h2>
+          <h2 className="self-center text-xl">或银行转账</h2>
+          <div className="rounded-lg bg-gradient-to-r from-blue-500 to-cyan-500 w-full h-[35rem]"></div>
         </div>
       </div>
     </div>
