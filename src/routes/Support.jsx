@@ -25,38 +25,46 @@ export default function Support() {
           當然，若你沒有這個經濟能力也沒關係，下載時透過官方網站下載，並關閉Adblock等阻擋廣告的工具，願意的話順手按一下廣告就可以讓我們擁有一些廣告收益囉。
         </p>
       </article>
-      <div className="flex flex-row p-12 justify-between items-center">
+      <div className="flex flex-col laptop:flex-row p-12 justify-between items-center">
         <div className="flex flex-col basis-2/3">
           <h2 className="text-5xl font-sans text-mana-purple tracking-widest">赞助我们，您将会得到：</h2>
           <ul className="py-12 font-body">
-            <li className="py-8 flex text-3xl">
-              <div className="rounded-full bg-mana-purple p-2 mx-2">
-                <Icon icon="icon-park-outline:clothes-crew-neck" className="text-white"/>
+            <li className="py-8 flex text-3xl items-center justify-items-center gap-x-8">
+              <div className="flex items-center justify-items-center rounded-full bg-mana-purple p-4 ">
+                <Icon icon="icon-park-outline:clothes-crew-neck" className="text-white" />
               </div>
-              用于购买服饰的
-              <strong className="text-mana-purple">白金</strong>
-              ，在玩家中亮出最特别的自己！
+              <h1>
+                用于购买服饰的
+                <strong className="text-mana-purple inline">白金</strong>
+                ，在玩家中亮出最特别的自己！
+              </h1>
             </li>
-            <li className="py-8 flex text-3xl">
-              <div className="rounded-full bg-mana-purple p-2 mx-2">
-                <Icon icon="ant-design:tag-outlined" className="text-white"/>
+            <li className="py-8 flex text-3xl items-center justify-items-center gap-x-8">
+              <div className="flex items-center justify-items-center rounded-full bg-mana-purple p-4 ">
+                <Icon icon="ant-design:tag-outlined" className="text-white" />
               </div>
-              赞助者
-              <strong className="text-mana-purple">专属称号</strong>
-              ，不是所有人都能得到！
+              <h1>
+                赞助者
+                <strong className="text-mana-purple inline">专属称号</strong>
+                ，不是所有人都能得到！
+              </h1>
             </li>
-            <li className="py-8 flex text-3xl">
-              <div className="rounded-full bg-mana-purple p-2 mx-2">
+            <li className="py-8 flex text-3xl items-center justify-items-center gap-x-8">
+              <div className="flex items-center justify-items-center rounded-full bg-mana-purple p-4 ">
                 <Icon icon="akar-icons:heart" className="text-white" />
               </div>
-              一颗专属你的
-              <strong className="text-mana-purple">爱心</strong>
-              ，感谢您的支持！
+              <h1>
+                一颗专属你的
+                <strong className="text-mana-purple inline">爱心</strong>
+                ，感谢您的支持！
+              </h1>
             </li>
             <li className="py-8 flex text-3xl">
-              未来将有更多的
-              <strong className="text-mana-purple">福利</strong>
-              等着你！
+              <h1>
+                未来将有更多的
+                <strong className="text-mana-purple inline">福利</strong>
+                等着你！
+              </h1>
             </li>
           </ul>
         </div>
@@ -73,11 +81,11 @@ export default function Support() {
           <h2 className="self-center text-3xl">或银行转账</h2>
           <div className="flex flex-col items-center justify-around space-between rounded-lg bg-gradient-to-r from-blue-500 to-cyan-500 w-full h-[24rem]">
             <h2 className='text-4xl font-body text-white font-bold'>玉山銀行</h2>
-            <h2 className='text-6xl font-body text-white font-bold'>​0015 9766 4115 9</h2>
+            <h2 className='text-6xl font-body text-white font-bold whitespace-pre-line self-center text-center px-6'>​0015 9766 4115 9</h2>
             <h2 className='text-xl font-body text-white font-bold'>转账请附玩家名称</h2>
           </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 }
