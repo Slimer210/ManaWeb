@@ -9,7 +9,7 @@ export default function Support() {
       <div className="p-12">
         <h2 className="text-6xl font-sans text-mana-purple tracking-widest">您的支持，是我们的最大动力！</h2>
       </div>
-      <div className="px-12">
+      <article className=" px-12">
         <p className="whitespace-pre-line my-8">
           魔法金屬是一個規模不小的模組，然而我們的野心並不僅止於此。我們希望魔法金屬中可以有自己的音樂、更豐富的點裝甚至3D模型、更多樣的怪物外觀甚至是一個仿造其他線上遊戲，由我們直接且長期營運的大型官方伺服器等。
         </p>
@@ -24,12 +24,12 @@ export default function Support() {
           我們希望魔法金屬會成為一個偉大的模組，而你可以幫助我們一同實現這個目標。
           當然，若你沒有這個經濟能力也沒關係，下載時透過官方網站下載，並關閉Adblock等阻擋廣告的工具，願意的話順手按一下廣告就可以讓我們擁有一些廣告收益囉。
         </p>
-      </div>
-      <div className="flex flex-row p-12 ">
-        <div className="flex flex-col flex-1">
-          <h2 className="text-4xl font-sans text-mana-purple tracking-widest">赞助我们，您将会得到：</h2>
+      </article>
+      <div className="flex flex-row p-12 justify-between items-center">
+        <div className="flex flex-col basis-2/3">
+          <h2 className="text-5xl font-sans text-mana-purple tracking-widest">赞助我们，您将会得到：</h2>
           <ul className="py-12 font-body">
-            <li className="py-8 flex items-center text-xl">
+            <li className="py-8 flex text-3xl">
               <div className="rounded-full bg-mana-purple p-2 mx-2">
                 <Icon icon="icon-park-outline:clothes-crew-neck" className="text-white"/>
               </div>
@@ -37,7 +37,7 @@ export default function Support() {
               <strong className="text-mana-purple">白金</strong>
               ，在玩家中亮出最特别的自己！
             </li>
-            <li className="py-8 flex text-xl">
+            <li className="py-8 flex text-3xl">
               <div className="rounded-full bg-mana-purple p-2 mx-2">
                 <Icon icon="ant-design:tag-outlined" className="text-white"/>
               </div>
@@ -45,7 +45,7 @@ export default function Support() {
               <strong className="text-mana-purple">专属称号</strong>
               ，不是所有人都能得到！
             </li>
-            <li className="py-8 flex text-xl">
+            <li className="py-8 flex text-3xl">
               <div className="rounded-full bg-mana-purple p-2 mx-2">
                 <Icon icon="akar-icons:heart" className="text-white" />
               </div>
@@ -53,25 +53,29 @@ export default function Support() {
               <strong className="text-mana-purple">爱心</strong>
               ，感谢您的支持！
             </li>
-            <li className="py-8 flex text-xl">
+            <li className="py-8 flex text-3xl">
               未来将有更多的
               <strong className="text-mana-purple">福利</strong>
               等着你！
             </li>
           </ul>
         </div>
-        <div className="flex flex-col justify-center items-center w-[30vw] h-[60vh] gap-y-4">
-          <h2 className="self-center text-3xl">您可以透过</h2>
+        <div className="flex flex-col justify-center items-center gap-y-8 basis-1/3 ">
+          <h2 className="self-center text-5xl">您可以透过</h2>
           <Link to="/" className="flex flex-row rounded-lg bg-paypal-blue items-center justify-center w-full p-4">
             <Icon icon="bi:paypal" className="text-white text-xl mx-4" />
-            <h2 className="text-white text-xl">使用PayPal转账</h2>
+            <h2 className="text-white text-2xl">使用PayPal转账</h2>
           </Link>
           <Link to="/" className="flex flex-row rounded-lg bg-patreon-orange items-center justify-center w-full p-4">
             <Icon icon="bxl:patreon" className="text-white text-xl mx-4" />
-            <h2 className="text-white text-xl">购买Patreon会员</h2>
+            <h2 className="text-white text-2xl">购买Patreon会员</h2>
           </Link>
-          <h2 className="self-center text-xl">或银行转账</h2>
-          <div className="rounded-lg bg-gradient-to-r from-blue-500 to-cyan-500 w-full h-[35rem]"></div>
+          <h2 className="self-center text-3xl">或银行转账</h2>
+          <div className="flex flex-col items-center justify-around space-between rounded-lg bg-gradient-to-r from-blue-500 to-cyan-500 w-full h-[24rem]">
+            <h2 className='text-4xl font-body text-white font-bold'>玉山銀行</h2>
+            <h2 className='text-6xl font-body text-white font-bold'>​0015 9766 4115 9</h2>
+            <h2 className='text-xl font-body text-white font-bold'>转账请附玩家名称</h2>
+          </div>
         </div>
       </div>
     </div>
