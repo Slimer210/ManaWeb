@@ -67,7 +67,7 @@ function NavigationBar() {
         
         {/* only show on mobile layout */}
         <div className={`${isNavigationOpen ? "fixed" : "hidden"} top-24 left-0 tablet:hidden`}>
-          <div className={`transition duration-300 bg-white font-sans-serif w-screen h-[calc(100vh-96px)] flex flex-nowrap flex-col items-center justify-center gap-x-5`}>
+          <div className={`transition duration-300 bg-white font-sans-serif w-screen h-[calc(100vh-96px)] flex flex-nowrap flex-col items-center justify-center gap-y-8`}>
           {navigationItem.map((item) => (
             <NavLink
               to={item.href}
@@ -110,8 +110,6 @@ function Footer() {
 
 // tailwind 3.0 yyds
 function App() {
-
-
   return (
     <BrowserRouter>
       <NavigationBar />
