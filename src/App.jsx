@@ -21,6 +21,7 @@ import ViewArticles from './routes/ViewArticles';
 
 // import image and logo
 import manaLogo from './assets/manalogo.png';
+import { useState, useEffect } from 'react';
 
 const navigationItem = [
   { name: '下载', href: 'download' },
@@ -30,6 +31,7 @@ const navigationItem = [
 ];
 
 function NavigationBar() {
+  const [isNavigationOpen, toggleNavigation] = useState(false);
   return (
     <>
       <Helmet>
@@ -39,7 +41,7 @@ function NavigationBar() {
 
       <nav className="w-full flex grow justify-between item-center px-5 py-5 drop-shadow-md bg-white top-0 left-0 fixed h-24 z-40">
 
-        <Link to="/" className="cursor-pointer select-none flex-shrink-0 flex items-center px-3 py-3 active:text-mana-dark-purple hover:text-mana-dark-purple duration-300 hover:scale-110">
+        <Link onClick={() => toggleNavigation(false)} to="/" className="cursor-pointer select-none flex-shrink-0 flex items-center px-3 py-3 active:text-mana-dark-purple hover:text-mana-dark-purple duration-300 hover:scale-110">
           <img
             className="block w-12 h-12 drop-shadow-none"
             src={manaLogo}
@@ -47,8 +49,9 @@ function NavigationBar() {
           />
           <h1 className="pl-4 text-2xl">魔法金属</h1>
         </Link>
-        <button type="button" className="tablet:hidden block" onClick={null}><Icon className="text-3xl" icon="bi:list" /></button>
-        <div className="font-sans-serif hidden flex-nowrap items-center justify-center gap-x-5 tablet:flex">
+        <button onClick={() => toggleNavigation(!isNavigationOpen)} type="button" className="tablet:hidden block"><Icon className="text-3xl" icon="bi:list" /></button>
+        {/* only show on non-mobile layout */}
+        <div className={`font-sans-serif hidden flex-nowrap items-center justify-center gap-x-5 tablet:flex`}>
           {navigationItem.map((item) => (
             <NavLink
               to={item.href}
@@ -61,6 +64,25 @@ function NavigationBar() {
           ))}
           <NavLink to="support" className="select-none px-8 py-4 text-[1.2rem] content-center whitespace-nowrap rounded-lg active:text-mana-dark-purple hover:scale-110 duration-300 bg-mana-purple text-white hover:text-white hover:bg-mana-dark-purple hover:rotate-3 shadow-md">支持我们</NavLink>
         </div>
+        
+        {/* only show on mobile layout */}
+        <div className={`${isNavigationOpen ? "fixed" : "hidden"} top-24 left-0 tablet:hidden`}>
+          <div className={`transition duration-300 bg-white font-sans-serif w-screen h-[calc(100vh-96px)] flex flex-nowrap flex-col items-center justify-center gap-x-5`}>
+          {navigationItem.map((item) => (
+            <NavLink
+              to={item.href}
+              className="select-none px-8 py-4 text-[1.2rem] content-center whitespace-nowrap rounded-lg active:text-mana-dark-purple hover:text-mana-dark-purple hover:scale-110 duration-300"
+              key={item.name}
+              onClick={() => toggleNavigation(!isNavigationOpen)}
+            >
+              {item.name}
+
+            </NavLink>
+          ))}
+          <NavLink to="support" className="select-none px-8 py-4 text-[1.2rem] content-center whitespace-nowrap rounded-lg active:text-mana-dark-purple hover:scale-110 duration-300 bg-mana-purple text-white hover:text-white hover:bg-mana-dark-purple hover:rotate-3 shadow-md">支持我们</NavLink>
+          </div>
+        </div>
+        
       </nav>
     </>
   );
@@ -88,6 +110,8 @@ function Footer() {
 
 // tailwind 3.0 yyds
 function App() {
+
+
   return (
     <BrowserRouter>
       <NavigationBar />
